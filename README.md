@@ -8,4 +8,4 @@ Various little snippets, scripts, and batch files, usually having something to d
 
 >> OS_INSTALL_DATE.VBS is rather self explanatory, queries WMI to show OS install time, reflecting the recorded time at first boot, not when setup was actually launched.
 
->> KEY.VBS Shows what your installed product key is, useful for reinstalls.
+>> key.vbs Shows what your installed product key is, useful for reinstalls.
