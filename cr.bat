@@ -1,0 +1,1 @@
+START /D "C:\Users\Alexander\AppData\Local\Chromium\Application\" C:\Users\Alexander\AppData\Local\Chromium\Application\chrome.exe --num-raster-threads=6 --force-gpu-mem-available-mb=1536 --force-gpu-mem-discardable-limit-mb=512 --enable-win7-webrtc-hw-h264-decoding --force-dark-mode --gpu-rasterization-msaa-sample-count=8 --webgl-msaa-sample-count=8
