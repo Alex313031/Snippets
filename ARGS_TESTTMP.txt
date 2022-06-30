@@ -1,0 +1,4 @@
+use_openh264 = true
+remove_webcore_debug_symbols = true
+syzygy_optimize = true
+rtc_use_lto = true
