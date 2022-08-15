@@ -1,0 +1,48 @@
+## mpv prerequisites
+
+sudo apt install libvdpau-dev python3-docutils libmujs-dev mujs libopenal-dev libass-dev uchardet libbluray-dev rubberband-cli libzimg-dev liblcms2-dev liblcms2-utils libdvdnav-dev libdvdcss2 ffmpeg libuchardet-dev librubberband-dev di libarchive-dev libavcodec-dev libavutil-dev libavformat-dev libswscale-dev libavfilter-dev libswresample-dev mesa-utils libx11-dev libxml2-dev libx264-dev libx265-dev libmp3lame-dev libfdk-aac-dev libdav1d-dev libpipewire-0.3-dev libjack-dev libcaca-dev caca-utils libplacebo-dev libsixel-dev
+
+## AND
+
+libffmpeg-nvenc-dev || nv-codec-headers //May be one of these depending on Distro
+liblua5.4-dev liblua5.4 || liblua5.1-dev liblua5.1 //May be one of these depending on Distro
+
+## Clone mpv repo
+git clone https://github.com/mpv-player/mpv.git //Or download latest .zip/tarball
+
+## AND
+cd mpv
+
+## Download waf
+./bootstrap.py
+
+## Configure build
+./waf configure --enable-libmpv-shared --enable-optimize --disable-debug-build --enable-vector --verbose //Disable vector if CPU older than Sandy Bridge/Bulldozer.
+
+## Build
+./waf
+
+## Install (optional)
+./waf install //Installs to /usr/local by default.
+
+## Copyright (c) 2022 Alex313031
+## mpv Copyright (c) 2022 mpv.io
+
+## Optimization
+
+## After configuring and before building. In //mpv/build/c4che/_cache.py
+
+// On the line that says CFLAGS = [ *lots of stuff* ]
+
+// replace '-O2',
+// with
+
+'-O3', '-pipe', '-fgraphite-identity', '-floop-strip-mine', '-floop-nest-optimize', '-fno-semantic-interposition', '-fipa-pta', '-flto', '-fdevirtualize-at-ltrans', '-flto-partition=one', '-g0', '-s', '-march=bdver2', '-mtune=bdver2', //Substituting bdver2 with your CPU's microarch, I.E. haswell, tigerlake, etc.
+
+// On the line that says LINKFLAGS = ['-rdynamic']
+// make it look like this
+LINKFLAGS = ['-rdynamic', '-Wl,-O3', '-flto']
+
+
+export CFLAGS="-g0 -O3 -pipe -s -march=bdver2 -mtune=bdver2 -fgraphite-identity -floop-strip-mine -floop-nest-optimize -fno-semantic-interposition -fipa-pta -flto -fdevirtualize-at-ltrans"
+export LDFLAGS="-Wl,-O3 -flto"
