@@ -1,6 +1,6 @@
 ## mpv prerequisites
 
-sudo apt install libvdpau-dev python3-docutils libmujs-dev mujs libopenal-dev libass-dev uchardet libbluray-dev rubberband-cli libzimg-dev liblcms2-dev liblcms2-utils libdvdnav-dev libdvdcss2 ffmpeg libuchardet-dev librubberband-dev di libarchive-dev libavcodec-dev libavutil-dev libavformat-dev libswscale-dev libavfilter-dev libswresample-dev mesa-utils libx11-dev libxml2-dev libx264-dev libx265-dev libmp3lame-dev libfdk-aac-dev libdav1d-dev libpipewire-0.3-dev libjack-dev libcaca-dev caca-utils libplacebo-dev libsixel-dev
+sudo apt install libvdpau-dev python3-docutils libmujs-dev mujs libopenal-dev libass-dev uchardet libbluray-dev rubberband-cli libzimg-dev liblcms2-dev liblcms2-utils libdvdnav-dev libdvdcss2 ffmpeg libuchardet-dev librubberband-dev di libarchive-dev libavcodec-dev libavutil-dev libavformat-dev libswscale-dev libavfilter-dev libswresample-dev mesa-utils libx11-dev libxml2-dev libx264-dev libx265-dev libmp3lame-dev libfdk-aac-dev libdav1d-dev libpipewire-0.3-dev libjack-dev libcaca-dev caca-utils libplacebo-dev libsixel-dev jackd1 jack-tools figlet
 
 ## AND
 
